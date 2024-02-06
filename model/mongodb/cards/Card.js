@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
-import Image from "../sharedMongoose/Image.js";
-import Address from "../sharedMongoose/Address.js";
+import Image from "../users/Image.js";
+import Address from "../users/Address.js";
 import phoneRegex from "../../../utils/phoneRegex.js";
 import { DEFAULT_REQUIRED_STRING_VALIDATION } from "../helper/defaultStringValidation.helper.js";
 
+//ilan v :)
 const CardSchema = new mongoose.Schema({
   title: DEFAULT_REQUIRED_STRING_VALIDATION,
   subtitle: DEFAULT_REQUIRED_STRING_VALIDATION,

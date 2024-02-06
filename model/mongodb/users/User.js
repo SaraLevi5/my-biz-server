@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import Name from "./Name.js";
-import Image from "../sharedMongoose/Image.js";
-import Address from "../sharedMongoose/Address.js";
+import Image from "./Image.js";
+import Address from "./Address.js";
 import phoneRegex from "../../../utils/phoneRegex.js";
 import passwordRegex from "../../../utils/passwordRegex.js";
 
@@ -22,9 +22,9 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minLength: 7,
-    maxLength: 20,
-    match: RegExp(passwordRegex),
+    // minLength: 7,
+    // maxLength: 20,
+    // match: RegExp(passwordRegex),
   },
   image: Image,
   address: Address,
