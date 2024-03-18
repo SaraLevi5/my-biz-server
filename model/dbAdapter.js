@@ -3,11 +3,15 @@ import connectToMySQL from "./mysql/dbConnect.js";
 import {
   createUserMongo,
   getUserByEmailMongo,
+  getUserByIdMongo,
 } from "./mongodb/users/userService.js";
 import {
   createCardMongo,
-  getCardByBizNumberMongo,
   getAllCardsMongo,
+  getCardByIdMongo,
+  getCardByBizNumberMongo,
+  updateCardMongo,
+  deleteCardMongo,
 } from "./mongodb/cards/cardService.js";
 import normalizeUser from "./../normalize/user.normalize.js";
 import normalizeCards from "../normalize/card.normalize.js";
@@ -36,6 +40,12 @@ const getUserByEmail = (email) => {
   }
 };
 
+const getUserById = (id) => {
+  if (DB === "mongo") {
+    return getUserByIdMongo(id);
+  }
+};
+
 const createCard = (card) => {
   //normalizeCard
   card = normalizeCards(card);
@@ -56,12 +66,19 @@ const getAllCards = () => {
     return getAllCardsMongo();
   }
 };
+const getCardById = (id) => {
+  if (DB === "mongo") {
+    return getCardByIdMongo(id);
+  }
+};
 
 export default connectToDb;
 export {
   createUser,
   createCard,
   getCardByBizNumber,
+  getUserById,
   getAllCards,
   getUserByEmail,
+  getCardById,
 };

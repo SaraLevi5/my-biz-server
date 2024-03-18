@@ -14,6 +14,12 @@ const getAllCardsMongo = () => {
 const getCardByIdMongo = (id) => {
   return Card.findById(id);
 };
+
+//read
+const getAllMyCardsMongo = (userId) => {
+  return Card.find({ user_id: userId });
+};
+
 const getCardByBizNumberMongo = (bizNumber) => {
   return Card.findOne({ bizNumber });
 };
@@ -29,6 +35,7 @@ export {
   createCardMongo,
   getAllCardsMongo,
   getCardByIdMongo,
+  getAllMyCardsMongo,
   getCardByBizNumberMongo,
   updateCardMongo,
   deleteCardMongo,
