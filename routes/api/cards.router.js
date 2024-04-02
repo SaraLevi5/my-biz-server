@@ -16,6 +16,7 @@ import bodyValidationMiddleware from "../../middlewares/bodyValidation.mw.js";
 import { createCardValidation } from "../../validation/validationAdapter.js";
 import adminOrBizMiddleware from "../../middlewares/adminOrBiz.mw.js";
 import isAdminMiddleware from "../../middlewares/isAdmin.mw.js";
+
 const router = express.Router();
 
 router.get("/", getAllCardsController);
@@ -41,7 +42,6 @@ router.put(
   updateCardController
 );
 
-//rawnak a
 router.patch(
   "/:id",
   authMiddleware,
@@ -49,7 +49,6 @@ router.patch(
   patchLikeController
 );
 
-//sara l, rawnak a
 router.patch(
   "/biz-number/:id",
   authMiddleware,
@@ -58,7 +57,6 @@ router.patch(
   patchBizNumberController
 );
 
-//oran m
 router.delete(
   "/:id",
   authMiddleware,

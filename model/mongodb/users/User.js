@@ -3,7 +3,6 @@ import Name from "./Name.js";
 import Image from "./Image.js";
 import Address from "./Address.js";
 import phoneRegex from "../../../utils/phoneRegex.js";
-import passwordRegex from "../../../utils/passwordRegex.js";
 
 const UserSchema = new mongoose.Schema({
   name: Name,
@@ -22,9 +21,6 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    // minLength: 7,
-    // maxLength: 20,
-    // match: RegExp(passwordRegex),
   },
   image: Image,
   address: Address,
@@ -43,10 +39,5 @@ const UserSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("user", UserSchema);
-/**
- * create users collection
- * connect users collection to user schema
- * create user model that allow us to crud to/from database - users collection(table)
- */
 
 export default User;

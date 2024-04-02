@@ -14,7 +14,7 @@ const connectToMySQL = async () => {
     return connection;
   } catch (err) {
     console.log(chalk.redBright.bold("Error connecting to MySQL: ", err));
-    process.exit(1); //drop the server
+    process.exit(1);
   }
 };
 

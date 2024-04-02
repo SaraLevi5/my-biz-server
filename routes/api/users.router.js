@@ -21,7 +21,6 @@ import objectIdParamsValidationMiddleware from "../../middlewares/objectIdParams
 
 const router = express.Router();
 
-// http://localhost:3030/api/users
 router.get("/", authMiddleware, isAdminMiddleware, getAllUsersController);
 
 router.get(
