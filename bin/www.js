@@ -12,7 +12,7 @@ import {
   initialCards,
 } from "../initialData/initalDataService.js";
 
-let port = normalizePort(process.env.PORT || "3030");
+let port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
 let server = http.createServer(app);
