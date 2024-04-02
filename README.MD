@@ -1,25 +1,27 @@
 # Biz server
 
-before you can run the please follow these steps:
+before you can run the please follow all these steps:
 
-Create you private key in .env -> TOKEN_PRIVATE_KEY.
-
-- [ ] before you run the server please install dependencies with this command:
+1. install dependencies with this command:
 
 ```
     npm i
 ```
 
-to run the server:
+2. to run the server:
 
 ```
     npm start
 ```
 
-to run the server in dev mode:
+3. to run the server in dev mode:
 
 ```
     npm run dev
 ```
+
+4. change file name from -> "env-example.txt" to -> ".env"
+
+5. Create you own private key in .env -> TOKEN_PRIVATE_KEY.
 
 [server documentation](https://documenter.getpostman.com/view/32178826/2sA2xe3ZNx)
