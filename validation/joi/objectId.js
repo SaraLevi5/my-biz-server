@@ -1,11 +1,11 @@
-import joi from "joi";
+import Joi from "joi";
 
-const objectIdSchema = joi.object({
-  id: joi.string().hex().length(24).required(),
+const objectIdSchema = Joi.object({
+  id: Joi.string().hex().length(24).required(),
 });
 
-const ValidateObjectId = (id) => {
+const validateObjectIdSchema = (id) => {
   return objectIdSchema.validateAsync({ id });
 };
 
-export default ValidateObjectId;
+export default validateObjectIdSchema;

@@ -2,15 +2,20 @@ import connectToMongo from "./mongodb/dbConnect.js";
 import connectToMySQL from "./mysql/dbConnect.js";
 import {
   createUserMongo,
+  deleteUserMongo,
   getUserByEmailMongo,
-  getUserByIdMongo,
+  patchIsBizMongo,
+  updateUserMongo,
+  getAllUsersMongo,
 } from "./mongodb/users/userService.js";
 import {
   createCardMongo,
+  getCardByBizNumberMongo,
   getAllCardsMongo,
   getCardByIdMongo,
-  getCardByBizNumberMongo,
+  getAllMyCardsMongo,
   updateCardMongo,
+  updateLikeCardMongo,
   deleteCardMongo,
 } from "./mongodb/cards/cardService.js";
 import normalizeUser from "./../normalize/user.normalize.js";
@@ -34,24 +39,48 @@ const createUser = (user) => {
   }
 };
 
+const updateUser = (id, user) => {
+  user = normalizeUser(user);
+  if (DB === "mongo") {
+    return updateUserMongo(id, user);
+  }
+};
+
+const getAllUsers = () => {
+  if (DB === "mongo") {
+    return getAllUsersMongo();
+  }
+};
+
 const getUserByEmail = (email) => {
   if (DB === "mongo") {
     return getUserByEmailMongo(email);
   }
 };
 
-const getUserById = (id) => {
+const deleteUser = (id) => {
   if (DB === "mongo") {
-    return getUserByIdMongo(id);
+    return deleteUserMongo(id);
   }
 };
 
-const createCard = (card) => {
+const patchIsBiz = (id, isBusiness) => {
+  if (DB === "mongo") {
+    return patchIsBizMongo(id, isBusiness);
+  }
+};
+
+//cards
+const createCard = async (card) => {
   //normalizeCard
-  card = normalizeCards(card);
+  // try {
+  card = await normalizeCards(card);
   if (DB === "mongo") {
     return createCardMongo(card);
   }
+  // } catch (err) {
+  //   return Promise.reject(err);
+  // }
 };
 
 const getCardByBizNumber = (bizNumber) => {
@@ -66,9 +95,34 @@ const getAllCards = () => {
     return getAllCardsMongo();
   }
 };
+
 const getCardById = (id) => {
   if (DB === "mongo") {
     return getCardByIdMongo(id);
+  }
+};
+
+const getAllMyCards = (user_id) => {
+  if (DB === "mongo") {
+    return getAllMyCardsMongo(user_id);
+  }
+};
+
+const updateCard = (card_id, card) => {
+  if (DB === "mongo") {
+    return updateCardMongo(card_id, card);
+  }
+};
+
+const updateLikeCard = (card_id, likes) => {
+  if (DB === "mongo") {
+    return updateLikeCardMongo(card_id, likes);
+  }
+};
+
+const deleteCard = (id) => {
+  if (DB === "mongo") {
+    return deleteCardMongo(id);
   }
 };
 
@@ -77,8 +131,15 @@ export {
   createUser,
   createCard,
   getCardByBizNumber,
-  getUserById,
   getAllCards,
   getUserByEmail,
+  updateUser,
+  deleteUser,
+  patchIsBiz,
   getCardById,
+  getAllMyCards,
+  updateCard,
+  updateLikeCard,
+  deleteCard,
+  getAllUsers,
 };

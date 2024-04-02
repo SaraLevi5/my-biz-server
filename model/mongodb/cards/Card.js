@@ -21,7 +21,7 @@ const CardSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    unique: true,
+    // unique: true,
     match: RegExp(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/),
   },
   web: {
@@ -32,6 +32,20 @@ const CardSchema = new mongoose.Schema({
   },
   image: Image,
   address: Address,
+  bizNumber: {
+    type: Number,
+    minLength: 7,
+    maxLength: 7,
+    required: true,
+  },
+  likes: [String],
+  createAt: {
+    type: Date,
+    default: Date.now,
+  },
+  user_id: {
+    type: mongoose.Schema.Types.ObjectId,
+  },
 });
 
 const Card = mongoose.model("card", CardSchema);
