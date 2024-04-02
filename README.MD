@@ -45,7 +45,7 @@ To set up and run the server-side application locally, follow these steps:
    TOKEN_PRIVATE_KEY=
    MONGODB_CON_STR=
 
-4. **Start the Server**: Run `npm start` to start the server. By default, the server will listen on port 3000.
+4. **Start the Server**: Run `npm start` to start the server. By default, the server will listen on port 3030.
    <br>
    **Start the Server in dev mode**: Run `npm run dev` to start the server in development mode with nodemon. This will automatically restart the server whenever code changes are detected.<br>
 
