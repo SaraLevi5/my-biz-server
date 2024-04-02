@@ -5,6 +5,7 @@ import {
   updateUser,
   deleteUser,
   patchIsBiz,
+  getUserById,
 } from "../model/dbAdapter.js";
 import handleError from "../utils/handleError.js";
 import { generateHash, cmpHash } from "../utils/bcrypt.js";
@@ -76,6 +77,16 @@ const getAllUsersController = async (req, res) => {
   }
 };
 
+const getUserByIdController = async (req, res) => {
+  try {
+    let user = await getUserById(req.params.id);
+    res.json(user);
+  } catch (err) {
+    console.log(err);
+    handleError(res, 400, err.message);
+  }
+};
+
 const updateUserController = async (req, res) => {
   /**
    * validation | mw, joi
@@ -125,4 +136,5 @@ export {
   updateUserController,
   deleteUserController,
   patchIsBizController,
+  getUserByIdController,
 };

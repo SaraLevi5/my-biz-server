@@ -7,6 +7,7 @@ import {
   patchIsBizMongo,
   updateUserMongo,
   getAllUsersMongo,
+  getUserByIdMongo,
 } from "./mongodb/users/userService.js";
 import {
   createCardMongo,
@@ -49,6 +50,12 @@ const updateUser = (id, user) => {
 const getAllUsers = () => {
   if (DB === "mongo") {
     return getAllUsersMongo();
+  }
+};
+
+const getUserById = (id) => {
+  if (DB === "mongo") {
+    return getUserByIdMongo(id);
   }
 };
 
@@ -142,4 +149,5 @@ export {
   updateLikeCard,
   deleteCard,
   getAllUsers,
+  getUserById,
 };
