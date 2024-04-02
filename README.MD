@@ -1,5 +1,15 @@
 # Biz server
 
+before you can run the please follow these steps:
+
+Create you private key in .env -> TOKEN_PRIVATE_KEY.
+
+- [ ] before you run the server please install dependencies with this command:
+
+```
+    npm i
+```
+
 to run the server:
 
 ```
