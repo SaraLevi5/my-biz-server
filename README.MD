@@ -65,6 +65,20 @@ To set up and run the server-side application locally, follow these steps:
 | PATCH | /users/:id | The registered user | Change isBusiness status | User |
 | DELETE | /users/:id | The registered user or admin | Delete user | Deleted user|
 
+6.**Cards end points**
+<br>
+| method | URL | Authorization | action | return |
+|--------|-----|---------------|--------|--------|
+| GET | /cards | all | Get all cards | an array of cards |
+| GET | /cards/my-cards | The registered user | Get user cards | Array of cards|
+| GET | /cards/:id | all | Get card | card|
+| POST | /cards | Business user | Create new card | card |
+| PUT | /cards/:id | The user who created the card | Edit card | card |
+| PATCH | /cards/:id | A registered user | Like a card | card |
+| DELETE | /cards/:id | The user who created the card or admin | Delete card | Deleted card|
+
+| PATCH | /cards//biz-number/:id | The registered user | Change isBusiness status | User |
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
