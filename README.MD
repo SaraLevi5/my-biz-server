@@ -58,8 +58,13 @@ To set up and run the server-side application locally, follow these steps:
 | method | URL | Authorization | action | return |
 |--------|-----|---------------|--------|--------|
 | POST | /users/register| All | register user | an object |
-| | | | | |
-| | | | | |
+| POST | /users/login | All | login | Encrypt token|
+| GET | /users | Admin | Get all users | an array of users |
+| GET | /users/:id | The registered user or admin | Get user by id | User|
+| GET | /users | Admin | Get all users | an array of users |
+| GET | /users | Admin | Get all users | an array of users |
+| GET | /users | Admin | Get all users | an array of users |
+| GET | /users | Admin | Get all users | an array of users |
 
 ## License
 
