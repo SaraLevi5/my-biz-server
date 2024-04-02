@@ -22,14 +22,8 @@ before you can run the please follow all these steps:
     npm run dev
 ```
 
-```
 4. change file name from &rarr; "env-example.txt" to &rarr; ".env"
-```
 
-```
 5. Create you own private key in .env &rarr; TOKEN_PRIVATE_KEY.
-```
 
-```
 6. Write any 4 digit port number in .env &rarr; PORT.
-```
