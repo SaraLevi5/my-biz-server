@@ -68,7 +68,7 @@ To set up and run the server-side application locally, follow these steps:
 6.**Cards end points**
 <br>
 | method | URL | Authorization | action | return |
-|--------|-----|---------------|--------|--------|
+|--------|--------------|---------------|--------|--------|
 | GET | /cards | all | Get all cards | an array of cards |
 | GET | /cards/my-cards | The registered user | Get user cards | Array of cards|
 | GET | /cards/:id | all | Get card | card|
