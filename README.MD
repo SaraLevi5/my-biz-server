@@ -46,11 +46,8 @@ To set up and run the server-side application locally, follow these steps:
    MONGODB_CON_STR=
 
 4. **Start the Server**: Run `npm start` to start the server. By default, the server will listen on port 3000.
-   **Start the Server in dev mode**:
-
-```
-    npm run dev
-```
+   <br>
+   **Start the Server in dev mode**: Run `npm run dev` to start the server in development mode with nodemon. This will automatically restart the server whenever code changes are detected.<br>
 
 5. **Access the Application**: Access the server-side application using a web browser or API client, depending on the functionalities being tested.
 
