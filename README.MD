@@ -61,10 +61,9 @@ To set up and run the server-side application locally, follow these steps:
 | POST | /users/login | All | login | Encrypt token|
 | GET | /users | Admin | Get all users | an array of users |
 | GET | /users/:id | The registered user or admin | Get user by id | User|
-| GET | /users | Admin | Get all users | an array of users |
-| GET | /users | Admin | Get all users | an array of users |
-| GET | /users | Admin | Get all users | an array of users |
-| GET | /users | Admin | Get all users | an array of users |
+| PUT | /users/:id | The registered user | Edit user | User |
+| PATCH | /users/:id | The registered user | Change isBusiness status | User |
+| DELETE | /users/:id | The registered user or admin | Delete user | Deleted user|
 
 ## License
 
