@@ -76,7 +76,7 @@ To set up and run the server-side application locally, follow these steps:
 | PUT | /cards/:id | The user who created the card | Edit card | card |
 | PATCH | /cards/:id | A registered user | Like a card | card |
 | DELETE | /cards/:id | The user who created the card or admin | Delete card | Deleted card|
-| bonus- PATCH | /cards//biz-number/:id | The registered user | Change isBusiness status | User |
+| bonus- PATCH | /cards//biz-number/:id | Admin | Change card biz-number | card |
 
 ## License
 
