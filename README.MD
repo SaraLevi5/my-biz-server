@@ -10,6 +10,8 @@ This project involves the development of a server-side application for an intern
 The primary goal of this project is to develop a robust and efficient server-side application that supports the following functionalities:
 
 1. **User Authentication**: Implement user authentication mechanisms to ensure secure access to the website management system.
+   <br>
+   **All the users password** &rarr; "Aa1234!!", you will need it to check and authorization in the requests.
 
 2. **Card-based Content Management**: Create an intuitive interface for business users to organize, publish, edit, and delete content using cards on their website.
 
@@ -50,6 +52,14 @@ To set up and run the server-side application locally, follow these steps:
    **Start the Server in dev mode**: Run `npm run dev` to start the server in development mode with nodemon. This will automatically restart the server whenever code changes are detected.<br>
 
 5. **Access the Application**: Access the server-side application using a web browser or API client, depending on the functionalities being tested.
+
+6.**Users end points**
+<br>
+| method | URL | Authorization | action | return |
+|--------|-----|---------------|--------|--------|
+| POST | /users/register| All | register user | an object |
+| | | | | |
+| | | | | |
 
 ## License
 
